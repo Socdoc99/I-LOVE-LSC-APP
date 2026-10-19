@@ -6,7 +6,7 @@ Aplicación móvil con dinámicas de juego para que personas oyentes aprendan Le
 
 ## Stack
 
-Flutter · Riverpod · go_router · Firebase (Auth, Firestore, Storage, Cloud Messaging, Analytics) · video_player + chewie · freezed
+Flutter · Riverpod · go_router · Firebase (Auth, Firestore, Storage, Analytics) · video_player + chewie · freezed · flutter_local_notifications
 
 ## Empezar
 

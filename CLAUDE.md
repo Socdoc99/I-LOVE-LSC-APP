@@ -12,10 +12,14 @@ Documentación de apoyo (léela cuando la tarea la toque): `docs/arquitectura.md
 ## Stack
 - Flutter estable + Dart, Android primero (iOS se compila pero no se prueba en el prototipo).
 - Estado: Riverpod (con riverpod_generator). Navegación: go_router.
-- Firebase: Auth (correo y Google), Cloud Firestore, Storage, Cloud Messaging, Analytics.
+- Firebase: Auth (correo y Google con google_sign_in), Cloud Firestore, Storage, Analytics. Sin Cloud Messaging ni Cloud Functions.
+- Recordatorio diario: flutter_local_notifications (programado en el teléfono; ver `docs/decisiones/0005-recordatorio-local.md`).
+- Animaciones: las nativas de Flutter; sin Lottie ni Rive.
 - Video: video_player + chewie, con velocidad 0.5x / 0.75x / 1x y bucle.
 - Modelos inmutables con freezed + json_serializable.
-- Lint: very_good_analysis. Pruebas: flutter_test + mocktail.
+- Textos: flutter_localizations + intl (ARB).
+- Lint: very_good_analysis. Pruebas: flutter_test + mocktail + integration_test.
+- Ningún paquete fuera de esta lista entra sin registrar la decisión en `docs/decisiones/`.
 
 ## Arquitectura
 Feature-first, tres capas por feature (detalle en `docs/arquitectura.md`):
