@@ -1,0 +1,50 @@
+# --- Flutter / Dart ---
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+coverage/
+*.g.dart.bak
+
+# --- Android / iOS ---
+android/.gradle/
+android/local.properties
+android/app/debug/
+android/app/release/
+android/key.properties
+*.jks
+*.keystore
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/ephemeral/
+
+# --- Firebase ---
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# --- Secretos y datos personales (repo público) ---
+.env
+.env.*
+service-account*.json
+**/serviceAccountKey.json
+content/
+*.mp4
+*.mov
+
+# --- Claude Code: ajustes personales ---
+.claude/settings.local.json
+CLAUDE.local.md
+
+# --- Editor y sistema ---
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.DS_Store
+Thumbs.db
