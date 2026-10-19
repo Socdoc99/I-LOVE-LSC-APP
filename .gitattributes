@@ -1,0 +1,10 @@
+# Finales de línea LF en todo el repo, aunque se trabaje en Windows.
+# Evita que dart format falle en el CI por CRLF.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.png binary
+*.jpg binary
+*.webp binary
+*.ttf binary
+*.otf binary
+*.jar binary

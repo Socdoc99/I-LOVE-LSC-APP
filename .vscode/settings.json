@@ -1,0 +1,17 @@
+{
+  "files.eol": "\n",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": "explicit",
+      "source.organizeImports": "explicit"
+    }
+  },
+  "files.exclude": {
+    "**/*.g.dart": false,
+    "**/*.freezed.dart": false
+  }
+}

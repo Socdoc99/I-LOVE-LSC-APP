@@ -1,0 +1,22 @@
+name: Error
+description: Algo que no funciona como debería.
+title: "fix: "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducir
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Qué esperabas y qué pasó
+    validations:
+      required: true
+  - type: input
+    id: entorno
+    attributes:
+      label: Entorno
+      description: dev o prod, emulador o teléfono, versión de Android.
