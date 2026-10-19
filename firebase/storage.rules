@@ -1,0 +1,16 @@
+rules_version = '2';
+
+// Videos de señas en signs/<unidad>/<id>.mp4.
+// Los sube el script de seed con cuenta de servicio; la app solo los lee.
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /signs/{unidad}/{archivo} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

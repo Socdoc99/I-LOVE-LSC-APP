@@ -1,0 +1,16 @@
+name: Tarea manual
+description: Algo que hace Artur (consola de Firebase, dispositivo, comunidad sorda, firma del APK).
+title: "MANUAL · "
+labels: ["manual"]
+body:
+  - type: textarea
+    id: que
+    attributes:
+      label: Qué hay que hacer
+    validations:
+      required: true
+  - type: textarea
+    id: desbloquea
+    attributes:
+      label: Qué desbloquea
+      description: Issues que dependen de esta tarea.

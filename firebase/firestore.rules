@@ -1,0 +1,53 @@
+rules_version = '2';
+
+// Reglas de EnSeñas. Se publican en ensenas-dev y ensenas-prod con:
+//   firebase deploy --only firestore:rules --project <alias>
+// Si cambia el modelo de datos, actualiza también docs/modelo-datos.md.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    // Contenido del curso: lo lee cualquier usuario autenticado.
+    // Solo se escribe con el script de seed (cuenta de servicio, salta estas reglas).
+    match /units/{unitId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /lessons/{lessonId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    match /signs/{signId} {
+      allow read: if signedIn();
+      allow write: if false;
+    }
+
+    // Perfil y progreso: cada persona solo ve y edita lo suyo.
+    match /users/{uid} {
+      allow read, update: if isOwner(uid);
+      allow create: if isOwner(uid)
+        && request.resource.data.xp == 0
+        && request.resource.data.racha == 0
+        && request.resource.data.vidas == 5;
+      allow delete: if false;
+
+      match /progress/{lessonId} {
+        allow read, write: if isOwner(uid);
+      }
+    }
+
+    // Todo lo demás está cerrado.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

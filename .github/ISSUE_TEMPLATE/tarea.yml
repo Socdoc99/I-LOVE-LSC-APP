@@ -1,0 +1,43 @@
+name: Tarea de desarrollo
+description: Una tarea que puede hacer Claude Code (en VS Code o comentando @claude).
+title: "S? · "
+labels: ["claude"]
+body:
+  - type: textarea
+    id: contexto
+    attributes:
+      label: Contexto
+      description: Por qué existe y de qué depende.
+    validations:
+      required: true
+  - type: textarea
+    id: alcance
+    attributes:
+      label: Alcance
+      description: Qué entra y qué queda fuera.
+    validations:
+      required: true
+  - type: textarea
+    id: archivos
+    attributes:
+      label: Archivos esperados
+      description: Rutas aproximadas según la arquitectura feature-first.
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Criterios de aceptación
+      description: Comportamientos comprobables y pruebas que deben existir.
+    validations:
+      required: true
+  - type: dropdown
+    id: modo
+    attributes:
+      label: Modo
+      options:
+        - autónomo (@claude en GitHub)
+        - VS Code (necesita mi computador, Firebase o un dispositivo)
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "**Definición de terminado:** la de CLAUDE.md y el skill flutter-feature."
